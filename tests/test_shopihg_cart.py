@@ -4,13 +4,16 @@ from allure_commons._allure import step
 from allure_commons.types import Severity
 from demo_shop.utils.help_post import demowebshop_api_post
 
-base ='https://demowebshop.tricentis.com'
-@allure.tag("web")
+base = 'https://demowebshop.tricentis.com'
+
+
+@allure.tag("UI")
+@allure.tag("API")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
-@allure.feature("Главное меню")
-@allure.story("Продажа")
-@allure.link("https://krisha.kz", name="Testing")
+@allure.feature("Корзина")
+@allure.story("Добавление в корзину")
+@allure.link("https://demowebshop.tricentis.com/", name="Testing")
 def test_add_to_cart_from_catalog_with_api(browser_setup):
     url = f'{base}/addproducttocart/catalog/22/1/1'
     response = demowebshop_api_post(url)
@@ -30,6 +33,13 @@ def test_add_to_cart_from_catalog_with_api(browser_setup):
                                                  ).element('[name^="itemquantity"]').should(have.value("1"))
 
 
+@allure.tag("UI")
+@allure.tag("API")
+@allure.severity(Severity.NORMAL)
+@allure.label("owner", "Irina_Kirillova")
+@allure.feature("Корзина")
+@allure.story("Добавление в корзину")
+@allure.link("https://demowebshop.tricentis.com/", name="Testing")
 def test_add_to_cart_some_desktop_with_ari(browser_setup):
     with step("Adding to cart a 2 laptop"):
         response = demowebshop_api_post('/addproducttocart/details/31/1',
@@ -51,6 +61,13 @@ def test_add_to_cart_some_desktop_with_ari(browser_setup):
                                                  ).element('[name^="itemquantity"]').should(have.value("2"))
 
 
+@allure.tag("UI")
+@allure.tag("API")
+@allure.severity(Severity.NORMAL)
+@allure.label("owner", "Irina_Kirillova")
+@allure.feature("Корзина")
+@allure.story("Добавление в корзину")
+@allure.link("https://demowebshop.tricentis.com/", name="Testing")
 def test_add_phones_and_laptop_with_api(browser_setup):
     with step("Adding to cart laptop"):
         response_1 = demowebshop_api_post('/addproducttocart/catalog/31/1/1')
