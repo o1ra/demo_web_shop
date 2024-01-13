@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Success": {
+            "type": "boolean"
+        },
+        "Result": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Success",
+        "Result"
+    ]
+}
