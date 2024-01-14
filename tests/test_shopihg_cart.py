@@ -44,11 +44,11 @@ def test_add_to_cart_from_catalog_with_api(browser_setup):
 @allure.feature("Корзина")
 @allure.story("Добавление в корзину")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
-def test_add_to_cart_some_desktop_with_ari(browser_setup):
+def test_add_to_cart_some_desktop_with_api(browser_setup):
     with step("Adding to cart a 2 laptop"):
-        response = demowebshop_api_post('/addproducttocart/details/31/1',
-                                        data={'addtocart_31.EnteredQuantity': 2})
-
+        url = f'{base}/addproducttocart/details/31/1'
+        data = {'addtocart_31.EnteredQuantity': 2}
+        response = demowebshop_api_post(url, data=data)
         cookie = response.cookies.get("Nop.customer")
 
     with step("Set cookie from API"):
@@ -74,11 +74,14 @@ def test_add_to_cart_some_desktop_with_ari(browser_setup):
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
 def test_add_phones_and_laptop_with_api(browser_setup):
     with step("Adding to cart laptop"):
-        response_1 = demowebshop_api_post('/addproducttocart/catalog/31/1/1')
+        url_1 = f'{base}/addproducttocart/catalog/31/1/1'
+        response_1 = demowebshop_api_post(url_1)
         cookie_1 = response_1.cookies.get("Nop.customer")
 
     with step("Adding to cart Smartphone"):
-        response_2 = demowebshop_api_post('/addproducttocart/catalog/43/1/1', cookies={"Nop.customer": cookie_1})
+        url_2 = f'{base}/addproducttocart/catalog/43/1/1'
+        cookies = {"Nop.customer": cookie_1}
+        response_2 = demowebshop_api_post(url_2, cookies=cookies)
         cookie_2 = response_2.cookies.get("Nop.customer")
 
     with step("Set cookie from API"):
