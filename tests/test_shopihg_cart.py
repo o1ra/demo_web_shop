@@ -15,6 +15,7 @@ base = 'https://demowebshop.tricentis.com'
 @allure.feature("Корзина")
 @allure.story("Добавление в корзину")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Добавление товара в корзину")
 def test_add_to_cart_from_catalog_with_api(browser_setup):
     url = f'{base}/addproducttocart/catalog/22/1/1'
     response = demowebshop_api_post(url)
@@ -42,6 +43,7 @@ def test_add_to_cart_from_catalog_with_api(browser_setup):
 @allure.feature("Корзина")
 @allure.story("Добавление в корзину")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Добавление нескольких едениц товара в корзину")
 def test_add_to_cart_some_desktop_with_api(browser_setup):
     with step("Adding to cart a 2 laptop"):
         url = f'{base}/addproducttocart/details/31/1'
@@ -71,6 +73,7 @@ def test_add_to_cart_some_desktop_with_api(browser_setup):
 @allure.feature("Корзина")
 @allure.story("Добавление в корзину")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Добаление двух разных товаров к корзину")
 def test_add_phones_and_laptop_with_api(browser_setup):
     with step("Adding to cart laptop"):
         url_1 = f'{base}/addproducttocart/catalog/31/1/1'

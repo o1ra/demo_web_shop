@@ -16,6 +16,7 @@ base = 'https://demowebshop.tricentis.com'
 @allure.feature("Опрос")
 @allure.story("Участие в опросе неавторизированным пользователем")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Гоолосование в опросе неавторизированным пользователем")
 def test_voting_in_a_poll_by_unauthorized():
     url = f'{base}/poll/vote'
     schema = load_path("pool_by_unauthorized.json")
@@ -44,6 +45,7 @@ def test_voting_in_a_poll_by_unauthorized():
 @allure.feature("Подписка")
 @allure.story("Успешная подписка на письма")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Успешная подписка на письма")
 def test_subscribe_news_letter_successful():
     url = f'{base}/subscribenewsletter'
     schema = load_path("subscribe_news_letter_success.json")
@@ -74,6 +76,7 @@ def test_subscribe_news_letter_successful():
 @allure.feature("Подписка")
 @allure.story("Попытка оформить подписку с некорректной почты")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Попытка оформить подписку с некорректной почты")
 def test_subscribe_news_letter_unsuccessful():
     url = f'{base}/subscribenewsletter'
     schema = load_path("subscribe_news_letter_fail.json")
@@ -101,6 +104,7 @@ def test_subscribe_news_letter_unsuccessful():
 @allure.feature("Список желаний")
 @allure.story("Добавление товара в список желаний")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Добавление товара в список желаний")
 def test_added_wishlist():
     url = f'{base}/addproducttocart/details/22/2'
     schema = load_path("added_wishlist_success.json")
@@ -133,6 +137,7 @@ def test_added_wishlist():
 @allure.feature("Список желаний")
 @allure.story("Добавление больше одного товара в список желаний")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
+@allure.title("Добавление больше одного товара в список желаний")
 def test_added_wishlist_2_qwantity_product():
     url = f'{base}/addproducttocart/details/78/2'
     schema = load_path("added_wishlist_fail.json")
