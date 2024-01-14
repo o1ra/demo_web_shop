@@ -1,4 +1,4 @@
-## Автоматизация тестирования  веб-сайта [demowebshop](https://krisha.kz/)
+## Проект API тестов на сайт [demowebshop](https://krisha.kz/)
 
 ![main_page.png](resources/demowebshop.png)
 
