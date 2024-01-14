@@ -16,7 +16,7 @@ base = 'https://demowebshop.tricentis.com'
 @allure.feature("Опрос")
 @allure.story("Участие в опросе неавторизированным пользователем")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
-@allure.title("Гоолосование в опросе неавторизированным пользователем")
+@allure.title("Голосование в опросе неавторизированным пользователем")
 def test_voting_in_a_poll_by_unauthorized():
     url = f'{base}/poll/vote'
     schema = load_path("pool_by_unauthorized.json")
