@@ -21,7 +21,7 @@ def demowebshop_api_post(url, **kwargs):
                       attachment_type=AttachmentType.JSON, extension="json")
 
         logging.info("Request: " + result.request.url)
-        if result.request.body != "null":
+        if result.request.body:
             logging.info("INFO Request body: " + result.request.body)
         logging.info("Request headers: " + str(result.request.headers))
         logging.info("Response code " + str(result.status_code))
