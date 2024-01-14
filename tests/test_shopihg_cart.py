@@ -69,6 +69,8 @@ def test_add_to_cart_some_desktop_with_api(browser_setup):
 @allure.tag("API")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "Irina_Kirillova")
+@allure.label('layer', 'UI')
+@allure.label('layer', 'API')
 @allure.feature("Корзина")
 @allure.story("Добавление в корзину")
 @allure.link("https://demowebshop.tricentis.com/", name="Testing")
