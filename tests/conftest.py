@@ -5,12 +5,16 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from demo_shop.utils import attach
+from demo_shop_tests.utils import attach
 
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
     load_dotenv()
+
+@pytest.fixture
+def base_url():
+    return 'https://demowebshop.tricentis.com'
 
 
 @pytest.fixture(scope='function')

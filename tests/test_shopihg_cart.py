@@ -2,7 +2,7 @@ import allure
 from selene import browser, have
 from allure_commons._allure import step
 from allure_commons.types import Severity
-from demo_shop.utils.help_post import demowebshop_api_post
+from demo_shop_tests.utils.help_post import demowebshop_api_post
 
 base = 'https://demowebshop.tricentis.com'
 
