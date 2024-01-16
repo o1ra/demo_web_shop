@@ -14,4 +14,3 @@ def generate_random_email():
 
 
 random_email = generate_random_email()
-print("Случайный адрес электронной почты:", random_email)
